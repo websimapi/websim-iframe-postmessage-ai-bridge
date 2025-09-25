@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Iframe PostMessage AI Bridge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&family=Space+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1 class="title">AI Bridge</h1>
+      <p class="subtitle">This page processes inbound postMessage instructions and returns AI-generated results.</p>
+    </header>
+
+    <section class="status">
+      <div class="badge" id="embed-status">Not embedded</div>
+      <div class="badge" id="origin-status">Origin: *</div>
+      <div class="badge" id="ready-status">Ready: false</div>
+    </section>
+
+    <section class="controls">
+      <button id="send-ready" class="btn">Send READY to parent</button>
+      <button id="simulate-inbound" class="btn">Simulate inbound (auto)</button>
+    </section>
+
+    <section class="log">
+      <h2 class="log-title">Events</h2>
+      <div id="log" class="log-body" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script type="importmap">
+  {
+    "imports": {
+      // No external libs needed; websim is globally available
+    }
+  }
+  </script>
+  <script type="module" src="./main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
